@@ -1,0 +1,29 @@
+一： Spring-data底层的接口路基：
+
+spring-data : PagingAndSortingRepository-> CrudRepository-> Repository ，它是springdatajpa,solr,mongoDB,Elasticsearch的核心基础。
+有三个主要的接口：
+
+1. Repository<T, ID> {}空接口
+
+2.CrudRepository<T, ID>extends Repository<T, ID> 主要是CRUD接口
+
+3.PagingAndSortingRepository<T, ID>extends CrudRepository<T, ID>主要是分页排序和CDUR的方法
+
+二：关于 spring-data-jpa
+
+spring-data-jpa:它只有一个核心的接口便 是JpaRepository，它的接口路基关系是：
+
+JpaRepository<T, ID extends Serializable>extends PagingAndSortingRepository<T, ID>, QueryByExampleExecutor<T>CRUD分页排序等方法都有
+
+三：关于spring-data-solr，它的接口路基关系是：SolrRepository->Repository，它有二个核心基础接口：
+
+1.SolrRepository<T, ID extends Serializable>extends Repository<T, ID>
+2.SolrCrudRepository-> SolrRepository<T, ID>, PagingAndSortingRepository
+
+四：关于spring-data-mongoDB,它的接口路基是MongoRepository->PagingAndSortingRepository,它有一个核心接口是
+1.MongoRepository<T, ID extends Serializable> extends PagingAndSortingRepository<T, ID>, QueryByExampleExecutor<T>
+
+五：Spring-data-Elasticsearch:它的接口路基是ElasticsearchPagingAndSortingRepository-> ElasticsearchCrudRepository-> ElasticsearchRepository ，它               有二个核心基础的接口是：
+
+1.ElasticsearchRepository<T, ID extends Serializable>extends ElasticsearchCrudRepository<T, ID> 
+2.ElasticsearchCrudRepository<T, ID extends Serializable>extends PagingAndSortingRepository<T, ID>
