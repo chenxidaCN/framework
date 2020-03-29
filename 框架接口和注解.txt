@@ -1,0 +1,70 @@
+DDD(Domain Driven Design，领域驱动设计)分层
+	Application为应用层
+		Infrastructure,基础实施层
+			
+			
+		Domain,领域层
+			Model/Entity,模型/实体
+				id
+				createdTime
+				modifiedTime
+				tenantId
+
+				code
+				name
+				parentId
+				
+				Normalize校验
+				正常化
+			Repository/DAO,仓储/数据访问对象
+				save
+				update
+				list
+				page
+				count
+				sum
+			EventBus/Producer,事件总线/生产者
+				send
+				pu
+			Writer/Consumer/Handler,处理者/消费者
+		Context/Manager,环境层/通用业务处理层
+			Manager
+			Action
+			
+		Application/Scheduler,应用层/调度层
+			Service/AppService
+			Input/Cause
+			Output/Result
+			TO/VO
+				
+		User Interface,用户界面层,web层
+			Controller/ApiController
+			Request
+			Reponse
+
+Module
+	Initialize,初始化 
+
+Cache
+
+Client
+
+Context
+
+Template
+
+Visitor
+
+Dispatcher
+
+View
+
+Filter 
+
+Strategy
+
+State 
+1.java
+
+2.c#
+	
